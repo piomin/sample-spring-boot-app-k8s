@@ -9,7 +9,7 @@ metadata:
     sonarqube.org/project-key: piomin_sample-spring-boot-app-k8s
     backstage.io/kubernetes-id: sample-spring-boot-app-k8s
     argocd/app-name: sample-spring-boot-app-k8s
-    prometheus.io/rule: container_memory_usage_bytes{pod=~"sample-spring-boot-app-.*"}|pod
+    prometheus.io/rule: container_memory_usage_bytes{pod=~"sample-spring-boot-app-.*"}|pod,rate(container_cpu_usage_seconds_total{pod=~"sample-spring-boot-app-.*"}[5m])|pod
   tags:
     - spring-boot
     - java
